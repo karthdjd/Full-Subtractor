@@ -2,7 +2,7 @@ module fullsubtractor;
 reg A, B, Bin;
 wire S, Cout;
 integer i;
-  fullsub SA(.A(A),.B(B) ,.Bin(Bin), .S(S), .Cout(Cout));
+  fullsub FS(.A(A),.B(B) ,.Bin(Bin), .S(S), .Cout(Cout));
 initial
 begin
   {A,B,Bin} <= 3'b000;
