@@ -1,0 +1,17 @@
+module fullsubtractor;
+reg A, B, Bin;
+wire S, Cout;
+integer i;
+  fullsub SA(.A(A),.B(B) ,.Bin(Bin), .S(S), .Cout(Cout));
+initial
+begin
+  {A,B,Bin} <= 3'b000;
+for(i=1;i<20; i=i+1)
+begin
+  $monitor($time, "\tA=%b\t B=%b\t Bin=%b\t S=%b\t Cout=%b", A, B,Bin, S,Cout);
+  #5{A,B,Bin} <= $random%8;
+end
+  //always #5 {A,B,Bin}<=$random%8;
+#45 $finish;
+end
+endmodule
